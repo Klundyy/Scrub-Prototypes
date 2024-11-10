@@ -17,12 +17,12 @@ public class TypingInput : MonoBehaviour
         typedWord = "";
     }
 
-    private void checkInput(){
+    private void CheckInput(){
         if(Input.anyKeyDown){
             string keysPressed = Input.inputString;
             if(Input.GetKeyDown(KeyCode.Backspace)){
                 removeLetter();
-            } else if (keysPressed.Length == 1 && typedWord.Length < 10){
+            } else if (keysPressed.Length == 1 && typedWord.Length < maxWordLength){
                 enterLetter(keysPressed);
             }
         }
@@ -41,9 +41,12 @@ public class TypingInput : MonoBehaviour
     public string getWord(){
         return typedWord;
     }
+    public void resetWord(){
+        typedWord = "";
+    }
     void Update()
     {
-        checkInput();
+        CheckInput();
         textDisplay.text = typedWord;
     }
 }
