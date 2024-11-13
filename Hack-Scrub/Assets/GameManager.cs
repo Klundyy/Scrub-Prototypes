@@ -17,14 +17,17 @@ public class GameManager : MonoBehaviour
     private Dictionary<int, string> wordSet;
 
     [SerializeField] private float timeToSpawn;
+    [SerializeField] private TMP_Text scoreText;
     private float currentTimeToSpawn;
     private int setLength;
+    private int score;
     void Start()
     {
         wordSet = new Dictionary<int, string>();
         spawnedWordList = new List<string>();
         wordObjectList = new List<GameObject>();
         setLength = 0;
+        score = 0;
         LoadWords();
     }
 
@@ -69,7 +72,11 @@ public class GameManager : MonoBehaviour
         if(spawnedWordList.Contains(TypingInput.GetComponent<TypingInput>().getWord())){
             int wordIndex = spawnedWordList.IndexOf(TypingInput.GetComponent<TypingInput>().getWord());
             GameObject comparedObject = wordObjectList[wordIndex];
-            
+            if(comparedObject.GetComponent<TMP_Text>().color == Color.green){
+                score += 1;
+            } else if (comparedObject.GetComponent<TMP_Text>().color == Color.red){
+                score -= 1;
+            }
             spawnedWordList.RemoveAt(wordIndex);
             TypingInput.GetComponent<TypingInput>().resetWord();
             Destroy(comparedObject);
@@ -78,6 +85,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        scoreText.text = score.ToString();
         if(currentTimeToSpawn > 0){
             currentTimeToSpawn -= Time.deltaTime;
         } else{

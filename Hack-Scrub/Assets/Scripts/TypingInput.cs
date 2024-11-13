@@ -22,7 +22,7 @@ public class TypingInput : MonoBehaviour
             string keysPressed = Input.inputString;
             if(Input.GetKeyDown(KeyCode.Backspace)){
                 removeLetter();
-            } else if (keysPressed.Length == 1 && typedWord.Length < maxWordLength){
+            } else if (keysPressed.Length == 1 && typedWord.Length < maxWordLength && !Char.IsWhiteSpace(keysPressed[0])){
                 enterLetter(keysPressed);
             }
         }
