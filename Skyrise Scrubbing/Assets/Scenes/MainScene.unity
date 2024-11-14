@@ -248,6 +248,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cleaner
       objectReference: {fileID: 0}
+    - target: {fileID: 1720630443082365278, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720630443082365278, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720630443082365278, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720630443082365278, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720630443082365278, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2164627616607559531, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.065631
