@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float pullDecay = 1.5f;
     private float ropeStartingHeight;
     private float ropeHorizontalOffset;
+    private bool asleep = true;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(asleep && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+        {
+            asleep = false;
+        }
         if (Input.GetKey(KeyCode.A))
         {
             leftPull += pullSpeed * Time.deltaTime;
@@ -53,6 +58,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (asleep)
+        {
+            return;
+        }
         rb.velocity += new Vector2(0, -baseSpeed * fallCoefficient) * Time.deltaTime;
         rb.velocity += new Vector2(0, baseSpeed * (leftPull + rightPull)) * Time.deltaTime;
         float sin = Mathf.Sin(Mathf.Deg2Rad * playerAngle);
@@ -64,9 +73,5 @@ public class PlayerMovement : MonoBehaviour
         //contentious line
         rb.velocity += new Vector2(-sin * baseSpeed, 0) * Time.deltaTime;
 
-        //this.transform.Translate(rb.velocity * Time.deltaTime);
-        
-        //collide with edges of screen
-        
     }
 }
