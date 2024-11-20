@@ -36,20 +36,22 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            leftPull += pullSpeed * Time.deltaTime;
-        }
-        else
-        {
-            leftPull -= pullSpeed * Time.deltaTime * pullDecay;
-        }
-        leftPull = Mathf.Clamp(leftPull, 0f, 1f);
-        if (Input.GetKey(KeyCode.D))
-        {
-            rightPull += pullSpeed * Time.deltaTime;
+           rightPull += pullSpeed * Time.deltaTime;
         }
         else
         {
             rightPull -= pullSpeed * Time.deltaTime * pullDecay;
+        }
+        leftPull = Mathf.Clamp(leftPull, 0f, 1f);
+        if (Input.GetKey(KeyCode.D))
+        {
+            
+            leftPull += pullSpeed * Time.deltaTime;
+        }
+        else
+        {
+            
+            leftPull -= pullSpeed * Time.deltaTime * pullDecay;
         }
         rightPull = Mathf.Clamp(rightPull, 0f, 1f);
         playerAngle = maxAngleDeg * (rightPull - leftPull);
