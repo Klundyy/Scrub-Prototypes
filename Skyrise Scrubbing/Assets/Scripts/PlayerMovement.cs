@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             asleep = false;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))
         {
             leftPull += pullSpeed * Time.deltaTime;
         }
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             leftPull -= pullSpeed * Time.deltaTime * pullDecay;
         }
         leftPull = Mathf.Clamp(leftPull, 0f, 1f);
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             rightPull += pullSpeed * Time.deltaTime;
         }
