@@ -13,13 +13,13 @@ public class WindowScript : MonoBehaviour
     [SerializeField] private Color clean = new(0, 255, 255);
     [SerializeField] private GameObject[] shines;
     readonly private float[] shineStartYs = new float[2];
-    private float alpha;
+    public float alpha;
     private float timeScale = 2f;
     private float chanceDirty = 0.7f;
     private bool doShine = false;
     private float shineProgress = 0f;
     private float shineTime = 0.8f;
-    private float shinePathLength = 3.4f;
+    private float shinePathLength = 3.6f;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +49,6 @@ public class WindowScript : MonoBehaviour
             if(alpha == 1f) {
                 doShine = true;
             }
-            Debug.Log("" + alpha);
         }
         spriteRenderer.color = Color.Lerp(dirty, clean, alpha);
         if(doShine) {
