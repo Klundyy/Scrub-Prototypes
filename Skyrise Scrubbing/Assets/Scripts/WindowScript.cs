@@ -20,6 +20,8 @@ public class WindowScript : MonoBehaviour
     private float shineProgress = 0f;
     private float shineTime = 0.8f;
     private float shinePathLength = 3.6f;
+
+    public GameObject sponge;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class WindowScript : MonoBehaviour
         myCollider = this.GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerCollider = player.GetComponentInChildren<Collider2D>();
+        sponge = GameObject.FindGameObjectWithTag("Sponge");
         if(Random.Range(0f,1f) > chanceDirty) {
             alpha = 1f;
             spriteRenderer.color = clean;
@@ -44,7 +47,12 @@ public class WindowScript : MonoBehaviour
     void Update()
     {
         //replace with window cleaning condition
-        if(Input.GetMouseButton(0) && myCollider.bounds.Intersects(playerCollider.bounds) && alpha < 1f) {
+        if (myCollider.bounds.Intersects(playerCollider.bounds)) {
+            if (sponge != null) {
+                sponge.transform.position = transform.position;
+            }
+        }
+        if(Input.GetKey(KeyCode.Space) && myCollider.bounds.Intersects(playerCollider.bounds) && alpha < 1f) {
             alpha = Mathf.Clamp(alpha + Time.deltaTime/timeScale, 0, 1);
             if(alpha == 1f) {
                 doShine = true;
