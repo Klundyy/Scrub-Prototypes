@@ -1709,17 +1709,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hold A - Lower left rope
+  m_text: 'Hold A - Moves player left
 
 
-    Hold D - Lower right rope
+    Hold D - Moves player right
 
 
-    Hold A+D
-    - Raise both ropes
+    Hold
+    A+D - Lowers player downward
 
 
-    Hold Left Mouse Button/ Space - Scrub nearby window
+    Hold Space - Scrub nearby window
 
 
     Goal:
@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
