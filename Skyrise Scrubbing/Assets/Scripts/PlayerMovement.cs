@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             asleep = false;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))
         {
             leftPull += pullSpeed * Time.deltaTime;
         }
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             leftPull -= pullSpeed * Time.deltaTime * pullDecay;
         }
         leftPull = Mathf.Clamp(leftPull, 0f, 1f);
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             rightPull += pullSpeed * Time.deltaTime;
         }
@@ -62,8 +62,8 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        rb.velocity += new Vector2(0, -baseSpeed * fallCoefficient) * Time.deltaTime;
-        rb.velocity += new Vector2(0, baseSpeed * (leftPull + rightPull)) * Time.deltaTime;
+        rb.velocity += new Vector2(0, baseSpeed * fallCoefficient) * Time.deltaTime;
+        rb.velocity += new Vector2(0, -baseSpeed * (leftPull + rightPull)) * Time.deltaTime;
         float sin = Mathf.Sin(Mathf.Deg2Rad * playerAngle);
         float ropeHeighOffset = ropeHorizontalOffset * sin;
         rightRope.transform.localPosition = new Vector3(-ropeHorizontalOffset, ropeStartingHeight - ropeHeighOffset, 0);
