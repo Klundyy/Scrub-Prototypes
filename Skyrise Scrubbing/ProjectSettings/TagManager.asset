@@ -48,6 +48,12 @@ TagManager:
   - name: Windows
     uniqueID: 1134295203
     locked: 0
+  - name: Sponge
+    uniqueID: 1294693109
+    locked: 0
+  - name: SpongeSpots
+    uniqueID: 854870737
+    locked: 0
   - name: Player
     uniqueID: 2324312467
     locked: 0
