@@ -598,10 +598,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1186762997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 230}
-  m_SizeDelta: {x: 1000, y: 120}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -72}
+  m_SizeDelta: {x: -60, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621534111
 MonoBehaviour:
@@ -650,12 +650,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 98.35
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 100
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Controls
+  m_text: 'How To
 
 '
   m_isRightToLeft: 0
@@ -1080,10 +1080,10 @@ RectTransform:
   - {fileID: 539089791}
   m_Father: {fileID: 1186762997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 600, y: 430}
+  m_SizeDelta: {x: -432, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1182225370
 MonoBehaviour:
@@ -1142,7 +1142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1186762997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1553,10 +1553,10 @@ RectTransform:
   - {fileID: 1228376334}
   m_Father: {fileID: 2064348169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 327.7, y: 263.3}
-  m_SizeDelta: {x: 35.9011, y: 30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -25, y: -25}
+  m_SizeDelta: {x: 35.901093, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1734562176
 MonoBehaviour:
@@ -1684,10 +1684,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2064348169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 569.1326, y: 344.8559}
+  m_SizeDelta: {x: -146.86737, y: -223.1441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1919148351
 MonoBehaviour:
@@ -1709,17 +1709,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A - Raise Left Rope
+  m_text: 'Hold A - Lower left rope
 
 
-    D - Raise Right Rope
+    Hold D - Lower right rope
 
 
-    A+D - Raise Both
-    Ropes
+    Hold A+D
+    - Raise both ropes
 
 
-    Hold Left Mouse Button - Scrub Nearby Window'
+    Hold Left Mouse Button/ Space - Scrub nearby window
+
+
+    Goal:
+    Scrub all windows clean!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1749,9 +1753,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 24
+  m_fontSizeMax: 36
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -1782,7 +1786,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -62.196747, z: 0, w: -72.09161}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1830,10 +1834,10 @@ RectTransform:
   - {fileID: 1734562175}
   m_Father: {fileID: 163032884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 699.1903, y: 566.7623}
+  m_SizeDelta: {x: -184.8097, y: -37.23767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064348170
 MonoBehaviour:
