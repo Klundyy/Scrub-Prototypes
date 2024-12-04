@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class CheckWinCon : MonoBehaviour
 {
-    private float timeRemaining = 60f; // Set time limit to 60 seconds
+    public float timeRemaining = 60f; // Set time limit to 60 seconds
     private bool timerRunning = true;
     public TextMeshProUGUI timerText;
 

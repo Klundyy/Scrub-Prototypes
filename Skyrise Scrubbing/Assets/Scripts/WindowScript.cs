@@ -20,6 +20,7 @@ public class WindowScript : MonoBehaviour
     private float shineProgress = 0f;
     private float shineTime = 0.8f;
     private float shinePathLength = 2.8f;
+    private bool wasIntersecting = false;
 
     public GameObject sponge;
     // Start is called before the first frame update
@@ -48,10 +49,15 @@ public class WindowScript : MonoBehaviour
     void Update()
     {
         //replace with window cleaning condition
-        if (myCollider.bounds.Intersects(playerCollider.bounds)) {
+        if (myCollider.bounds.Intersects(playerCollider.bounds) && !wasIntersecting) {
             if (sponge != null) {
                 sponge.transform.position = transform.position;
             }
+            wasIntersecting = true;
+        }
+        if (!myCollider.bounds.Intersects(playerCollider.bounds) && wasIntersecting) {
+            wasIntersecting = false;
+            sponge.transform.position = new Vector3 (0,500,0);
         }
         if(Input.GetKey(KeyCode.Space) && myCollider.bounds.Intersects(playerCollider.bounds) && alpha < 1f) {
             alpha = Mathf.Clamp(alpha + Time.deltaTime/timeScale, 0, 1);

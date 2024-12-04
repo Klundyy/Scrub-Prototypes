@@ -693,6 +693,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6491035790074084344, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6889524943483585069, guid: 43ba8fefa9353954a85ae30ae19078f6, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -1017,6 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6427de3e069020040a567fdee3e0f7cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeRemaining: 120
   timerText: {fileID: 913895669}
 --- !u!4 &601607951
 Transform:
