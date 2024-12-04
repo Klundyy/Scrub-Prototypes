@@ -65,10 +65,10 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity += new Vector2(0, -baseSpeed * fallCoefficient) * Time.deltaTime;
         rb.velocity += new Vector2(0, baseSpeed * (leftPull + rightPull)) * Time.deltaTime;
         float sin = Mathf.Sin(Mathf.Deg2Rad * playerAngle);
-        float ropeHeighOffset = ropeHorizontalOffset * sin;
+        float ropeHeighOffset = ropeHorizontalOffset * sin * -1;
         rightRope.transform.localPosition = new Vector3(-ropeHorizontalOffset, ropeStartingHeight - ropeHeighOffset, 0);
         leftRope.transform.localPosition = new Vector3(ropeHorizontalOffset, ropeStartingHeight + ropeHeighOffset, 0);
-        platform.transform.localRotation = Quaternion.Euler(0, 0, playerAngle);
+        platform.transform.localRotation = Quaternion.Euler(0, 0, -playerAngle);
 
         //contentious line
         rb.velocity += new Vector2(-sin * baseSpeed, 0) * Time.deltaTime;
