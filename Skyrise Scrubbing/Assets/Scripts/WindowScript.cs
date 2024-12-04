@@ -19,7 +19,7 @@ public class WindowScript : MonoBehaviour
     private bool doShine = false;
     private float shineProgress = 0f;
     private float shineTime = 0.8f;
-    private float shinePathLength = 3.6f;
+    private float shinePathLength = 2.8f;
 
     public GameObject sponge;
     // Start is called before the first frame update
@@ -36,10 +36,11 @@ public class WindowScript : MonoBehaviour
         } else {
             alpha = 0f;
             spriteRenderer.color = dirty;
-        }
-        for (int i = 0; i < shines.Length; i++) {
-            GameObject shine = shines[i];
-            shineStartYs[i] = shine.transform.position.y;
+            for (int i = 0; i < shines.Length; i++) {
+                GameObject shine = shines[i];
+                shineStartYs[i] = shine.transform.position.y;
+                shine.transform.position = new Vector3(shine.transform.position.x, shine.transform.position.y - shinePathLength, shine.transform.position.z);
+            }
         }
     }
 
@@ -67,17 +68,13 @@ public class WindowScript : MonoBehaviour
 
     //I hate it here
     private void Shine(float alpha) {
-        if (alpha < 1) {
-            for (int i = 0; i < shines.Length; i++) {
-                GameObject shine = shines[i];
-                shine.transform.position = new Vector3(shine.transform.position.x, shineStartYs[i] - alpha * shinePathLength, shine.transform.position.z);
-            }
-        } else {
-            for (int i = 0; i < shines.Length; i++) {
-                GameObject shine = shines[i];
-                shine.transform.position = new Vector3(shine.transform.position.x, shineStartYs[i] - shinePathLength, shine.transform.position.z);
-            }
+        if (alpha > 1) {
+            alpha = 1;
             doShine = false;
+        }
+        for (int i = 0; i < shines.Length; i++) {
+            GameObject shine = shines[i];
+            shine.transform.position = new Vector3(shine.transform.position.x, Mathf.Lerp(shineStartYs[i] - shinePathLength, shineStartYs[i], alpha), shine.transform.position.z);
         }
     }
 }
